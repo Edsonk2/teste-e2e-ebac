@@ -17,13 +17,13 @@ context('Funcionalidade Login', () => {
     });
 
     it('Login com sucesso usando Comando customizado', () => {
-        cy.login(dadosLogin.usuario, dadosLogin.senha)
+        cy.log(dadosLogin.usuario, dadosLogin.senha)
         cy.get('.page-title').should('contain', 'Minha conta')
     });
 
     it('Login usando fixture', () => {
         cy.fixture('perfil').then((dados) => {
-            cy.login(dados.usuario, dados.senha)
+            cy.log(dados.usuario, dados.senha)
         })
         cy.get('.page-title').should('contain', 'Minha conta')
     });

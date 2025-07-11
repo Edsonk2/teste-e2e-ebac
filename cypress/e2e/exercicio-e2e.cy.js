@@ -43,6 +43,20 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
      cy.get('.single_add_to_cart_button').click()
 
 
+     cy.get('.dropdown-toggle > .text-skin > .icon-basket').click()
+     cy.get('#cart > .dropdown-menu > .widget_shopping_cart_content > .mini_cart_content > .mini_cart_inner > .mcart-border > .buttons > .checkout').click()
+     cy.get('#billing_first_name').type('Edson')
+     cy.get('#billing_last_name').type('Oliveira')
+     cy.get('#billing_address_1').type('Rua João Castelo N° 57')
+     cy.get('#billing_city').type('Sao Luis-MA')
+     cy.get('#billing_postcode').type('65085420')
+     cy.get('#billing_phone').type('95642114111414')
+     cy.get('#billing_email').type('edsonz3k2@gmail.com')
+     cy.get('#terms').click()
+     cy.get('#place_order').click()
+     cy.get('.woocommerce-notice').should('contain', 'Obrigado. Seu pedido foi recebido.')
+
+
 
 
 
